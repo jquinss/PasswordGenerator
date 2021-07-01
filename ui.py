@@ -4,7 +4,7 @@ from password_generator import PasswordGenerator
 import pyperclip
 
 
-class CustomFrame(tk.Frame):
+class PasswordGeneratorFrame(tk.Frame):
     DEFAULT_TOTAL_CHARS = 12
     INCREMENT = 1
 
@@ -113,11 +113,11 @@ class CustomFrame(tk.Frame):
         pyperclip.copy(self.__pwd_entry.get())
 
 
-class MyApplication(tk.Tk):
+class PasswordGeneratorUI(tk.Tk):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.title("Password Generator")
         self.geometry("400x300")
         self.resizable(width=False, height=False)
-        CustomFrame(self).grid(row=0, column=0, sticky="")
+        PasswordGeneratorFrame(self).grid(row=0, column=0, sticky="")
         self.columnconfigure(0, weight=1)
