@@ -1,8 +1,8 @@
-from ui import MyApplication
+from ui import PasswordGeneratorUI
 
 
 def main():
-    app = MyApplication()
+    app = PasswordGeneratorUI()
     app.mainloop()
 
 
