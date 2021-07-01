@@ -34,12 +34,12 @@ class PasswordGenerator:
         return password
 
     def create_quick_strong_pwd(self, num_chars):
-        num_chars_per_category = self.__get_num_chars_per_category(num_chars)
+        num_chars_per_category = self.get_num_chars_per_category(num_chars)
         password = self.create_pwd(num_chars_per_category["lower"], num_chars_per_category["upper"],
                                           num_chars_per_category["number"], num_chars_per_category["special"])
         return password
 
-    def __get_num_chars_per_category(self, num_chars):
+    def get_num_chars_per_category(self, num_chars):
         num_upper_chars = ceil(num_chars * self.PERCENTAGE_UPPER)
         num_numeric_chars = ceil(num_chars * self.PERCENTAGE_NUMBER)
         num_special_chars = ceil(num_chars * self.PERCENTAGE_SPECIAL)
