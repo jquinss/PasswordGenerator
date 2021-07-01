@@ -1,6 +1,7 @@
 from math import ceil
 import random
 
+
 class PasswordGenerator:
     LOWER_CASE_ASCII_DECIMAL_MIN = 97
     LOWER_CASE_ASCII_DECIMAL_MAX = 122
@@ -9,7 +10,7 @@ class PasswordGenerator:
     NUMBER_ASCII_DECIMAL_MIN = 48
     NUMBER_ASCII_DECIMAL_MAX = 57
     SPECIAL_CHARS = ["!", "#", "$", "%", "'", "(", ")", "+", ",", "-", ".", "/", ":",
-                    "?", "@", "[", "\\", "]", "^", "_", "{", "}", "~"]
+                     "?", "@", "[", "\\", "]", "^", "_", "{", "}", "~"]
     MIN_NUM_CHARS = 6
     MAX_NUM_CHARS = 20
 
@@ -21,7 +22,7 @@ class PasswordGenerator:
 
         lower_chars = self.__get_unique_rand_chars_from_range(num_lower, self.LOWER_CASE_ASCII_DECIMAL_MIN,
                                                               self.LOWER_CASE_ASCII_DECIMAL_MAX)
-        upper_chars = self.__get_unique_rand_chars_from_range(num_upper,self.UPPER_CASE_ASCII_DECIMAL_MIN,
+        upper_chars = self.__get_unique_rand_chars_from_range(num_upper, self.UPPER_CASE_ASCII_DECIMAL_MIN,
                                                               self.UPPER_CASE_ASCII_DECIMAL_MAX)
         numeric_chars = self.__get_unique_rand_chars_from_range(num_numeric, self.NUMBER_ASCII_DECIMAL_MIN,
                                                                 self.NUMBER_ASCII_DECIMAL_MAX)
@@ -36,7 +37,7 @@ class PasswordGenerator:
     def create_quick_strong_pwd(self, num_chars):
         num_chars_per_category = self.get_num_chars_per_category(num_chars)
         password = self.create_pwd(num_chars_per_category["lower"], num_chars_per_category["upper"],
-                                          num_chars_per_category["number"], num_chars_per_category["special"])
+                                   num_chars_per_category["number"], num_chars_per_category["special"])
         return password
 
     def get_num_chars_per_category(self, num_chars):
