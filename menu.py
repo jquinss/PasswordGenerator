@@ -1,5 +1,6 @@
 from password_generator import PasswordGenerator
 
+
 class Menu:
     def __init__(self):
         self.menu_text = """Choose an option:
@@ -33,7 +34,6 @@ class Menu:
 
         password = self.pwd_generator.create_quick_strong_pwd(num_chars)
         print("Generated password:", password)
-
 
     def generate_custom_pwd(self):
         max_letter = self.pwd_generator.LOWER_CASE_ASCII_DECIMAL_MAX - self.pwd_generator.LOWER_CASE_ASCII_DECIMAL_MIN + 1
